@@ -79,19 +79,27 @@ header nav ul li a:hover {
 .showcase {
     display: flex;
     flex-wrap: wrap;
-    margin: 10%;
-    
+    justify-content: stretch;
+    align-content: stretch;
+    margin: 0 5%;
 }
 
 .showcase > div {
-    width: 50%;
+    min-width: 20%;
     text-align: center;
     border: 2px solid #003077;
-    height: 100px;
-    flex: 1 33%;
-    transition: flex-basis 2s;
+    background-image: linear-gradient(red,blue);
+    height: 250px;
+    flex-grow: 1;
+    transition: flex-grow 2s;
+    margin: 10px;
 }
 
 .showcase div:hover {
-    flex-basis: 100%;
+    flex-grow: 3.5;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
 }
