@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #1446A0;
+    --secondary-color: #5e503f;
+    --tertiary-color: #c6ac8f;
+    --quaternary-color: #0A0908;
+    --quinary-color: #EAE0D5;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +14,12 @@
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--quinary-color);
+    color: var(--quaternary-color);
 }
 
 header {
-    background-color: #003077;
+    background-color: var(--primary-color);
 }
 
 header nav ul {
@@ -23,22 +33,24 @@ header nav ul {
 
 header nav ul li a {
     text-decoration: none;
-    color: aliceblue;
+    color: var(--tertiary-color);
     font-size: 1.65vw;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px 10px;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, .5);
 }
 
 header nav ul li a:hover {
     background: white;
-    color: #003077;
+    color: var(--primary-color);
     border-radius: 15px;
     text-shadow: none;
 }
 
 .hero {
-    background-color: darkolivegreen;
-    height: 200px;
+    background-image: url(../images/pexels-luis-gomes-546819.jpg);
+    background-size: cover;
+    background-position: 10%;
+    height: 600px;
     display: flex;
     justify-content: end;
     align-items: flex-end;
@@ -46,24 +58,22 @@ header nav ul li a:hover {
 
 .hero h1 {
     padding: 10px;
-    border: 2px solid aliceblue;
+    border: 2px solid var(--secondary-color);
     margin-bottom: 20px;
     margin-right: -2px;
     font-size: 36px;
-    background-color: #003077;
-    color: aliceblue;
+    background-color: var(--tertiary-color);
     box-shadow: -7px 7px 10px rgba(0, 0, 0, .5);
 }
 
 .section-title {
     padding: 10px 50px;
-    border: 2px solid #003077;
+    border: 3px solid var(--secondary-color);
     margin-top: 20px;
     margin-left: -2px;
     margin-bottom: 10px;
     font-size: 24px;
-    background-color: aliceblue;
-    color: black;
+    background-color: var(--tertiary-color);
     width: fit-content;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, .5);
 }
@@ -74,6 +84,10 @@ header nav ul li a:hover {
     margin: 20px auto;
     font-size: 20px;
     line-height: 1.4;
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
 }
 
 .showcase {
@@ -85,21 +99,58 @@ header nav ul li a:hover {
 }
 
 .showcase > div {
-    min-width: 20%;
     text-align: center;
-    border: 2px solid #003077;
+    border: 3px solid var(--primary-color);
     background-image: linear-gradient(red,blue);
     height: 250px;
     flex-grow: 1;
     transition: flex-grow 2s;
     margin: 10px;
+    display: flex;
 }
 
-.showcase div:hover {
-    flex-grow: 3.5;
+.showcase > div:hover {
+    flex-grow: 10;
+}
+
+.showcase div div {
+    padding: 10px 50px;
+    border: 3px solid var(--secondary-color);
+    border-left: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: var(--tertiary-color);
+    width: fit-content;
+    align-self: flex-end;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, .5);
+}
+
+.contact nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 20px 0;
+}
+
+.contact nav ul li a {
+    color: var(--primary-color);
+    font-size: 22px;
+    padding: 10px 10px;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, .5);
+}
+
+.contact nav ul li a:hover {
+    background: white;
+    color: var(--primary-color);
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 footer {
     display: flex;
     justify-content: space-between;
+    padding: 20px 0;
+    background-color: var(--primary-color);
 }
