@@ -1,4 +1,5 @@
 # My Portfolio Page
-## https://verbaldye.github.io/huntsberger-portfolio/
 Page to display and link together projects and resume.
+## Link to deployed site:
+https://verbaldye.github.io/huntsberger-portfolio/
 ### HTML and CSS created by Dustin Huntsberger
