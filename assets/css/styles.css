@@ -84,14 +84,21 @@ header nav ul li a:hover {
     color: var(--quaternary-color);
 }
 
-.about-me p {
-    text-align: center;
+.about-me div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 80%;
-    margin: 20px auto;
+    margin: 0 auto;
+}
+
+.about-me article {
+    text-align: center;
+    width: 100%;
     margin-bottom: 50px;
     font-size: 20px;
     line-height: 1.4;
-    padding: 20px;
+    padding: 40px;
     border-radius: 15px;
     background-color: var(--primary-color);
 }
@@ -209,6 +216,14 @@ footer {
         font-size: 28px;
         text-align: end;
         padding: 10px 20px;
+    }
+
+    .about-me div {
+        width: 90%;
+    }
+
+    .showcase {
+        width: 90%;
     }
     
     footer h2:last-child {
