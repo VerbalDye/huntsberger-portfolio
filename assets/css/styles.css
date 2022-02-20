@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #1446A0;
+    --primary-color: #3b70cf;
     --secondary-color: #5e503f;
     --tertiary-color: #c6ac8f;
     --quaternary-color: #0A0908;
-    --quinary-color: white;
+    --quinary-color: #fffff8;
 }
 
 * {
@@ -15,7 +15,7 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: var(--quinary-color);
-    color: var(--quaternary-color);
+    color: white;
 }
 
 header {
@@ -67,6 +67,7 @@ header nav ul li a:hover {
     margin-right: -2px;
     font-size: 48px;
     background-color: var(--tertiary-color);
+    color: var(--quaternary-color);
     box-shadow: -7px 7px 10px rgba(0, 0, 0, .5);
 }
 
@@ -80,6 +81,7 @@ header nav ul li a:hover {
     background-color: var(--tertiary-color);
     width: fit-content;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, .5);
+    color: var(--quaternary-color);
 }
 
 .about-me p {
@@ -91,7 +93,6 @@ header nav ul li a:hover {
     line-height: 1.4;
     padding: 20px;
     border-radius: 15px;
-    color: var(--quinary-color);
     background-color: var(--primary-color);
 }
 
@@ -166,6 +167,10 @@ header nav ul li a:hover {
     margin: 25px;
 }
 
+.contact nav ul li {
+    padding: 10px;
+}
+
 .contact nav ul li a {
     color: var(--primary-color);
     font-size: 22px;
@@ -181,7 +186,50 @@ header nav ul li a:hover {
 footer {
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 20px 30px;
     background-color: var(--primary-color);
-    color: var(--quinary-color);
+}
+
+@media screen and (max-width: 980px) {
+    header nav ul li a {
+        font-size: 24px;
+    }
+
+    .hero {
+        height: 250px;
+    }
+    
+    .showcase > a {
+        flex-basis: 34%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+        text-align: end;
+        padding: 10px 20px;
+    }
+    
+    footer h2:last-child {
+        text-align: end;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    header nav ul li {
+        margin-bottom: 20px;
+        width: 34%;
+        text-align: center;
+    }
+
+    .hero {
+        height: 150px;
+    }
+
+    .contact nav ul {
+        display: block;
+        text-align: center;
+        margin: 0;
+    }
 }
