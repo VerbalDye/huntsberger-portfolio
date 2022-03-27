@@ -144,6 +144,30 @@ header nav ul li a:hover {
     background-image: url(../images/password-generator.JPG);
 }
 
+#taskinator {
+    background-image: url(../images/taskinator.JPG);
+}
+
+#coding-quiz {
+    background-image: url(../images/coding-quiz.JPG);
+}
+
+#taskmaster-pro {
+    background-image: url(../images/taskmaster-pro.jpg);
+}
+
+#work-day-scheduler {
+    background-image: url(../images/work-day-scheduler.jpg);
+}
+
+#git-it-done {
+    background-image: url(../images/git-it-done.JPG);
+}
+
+#weather-app {
+    background-image: url(../images/weather-app.JPG);
+}
+
 .showcase a div {
     padding: 10px 50px;
     border: 3px solid var(--secondary-color);

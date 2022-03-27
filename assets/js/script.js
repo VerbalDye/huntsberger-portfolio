@@ -23,12 +23,12 @@ var updateWidth = function () {
 
 var adjustShowcaseWidth = function (event) {
     var targetEl = event.target;
-    if (targetEl.tagName == "A") {
+    if (targetEl.tagName == "A" && showcaseWidth >= 900) {
         var row = targetEl.getAttribute("data-row");
         var totalWidthUsed = 0;
         showcaseElList.forEach(function (element) {
-            element.style.width = (element.firstElementChild.offsetWidth) + 20 + "px";
             if (element.getAttribute("data-row") == row) {
+                element.style.width = (element.firstElementChild.offsetWidth) + 20 + "px";
                 totalWidthUsed += element.firstElementChild.offsetWidth + 40;
             }
         });
