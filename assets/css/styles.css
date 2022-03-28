@@ -174,7 +174,7 @@ header nav ul li a:hover {
     height: 250px;
     transition: all 2s;
     margin: 10px;
-    display: flex;
+    position: relative;
     text-decoration: none;
     color: var(--quaternary-color);
     background-size: cover;
@@ -182,28 +182,43 @@ header nav ul li a:hover {
 }
 
 .showcase > a:hover {
-    /* flex-grow: 10; */
     height: 500px;
 }
 
-.showcase a div {
+.showcase a .showcase-body {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.showcase a .showcase-body:hover {
+    display: flex;
+    opacity: 1;
+}
+
+.showcase a .showcase-title {
     padding: 10px 30px;
     border: 3px solid var(--secondary-color);
     border-left: 0;
-    margin-bottom: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
     font-size: 16px;
     background-color: var(--tertiary-color);
     width: fit-content;
-    align-self: flex-end;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, .5);
 }
 
-.showcase a div h3 {
+.showcase a .showcase-title h3 {
     font-size: 24px;
 }
 
-.showcase a div > h3, .showcase div > p {
+.showcase a .showcase-title h3, .showcase .showcase-title p {
     margin: 0;
+    white-space: nowrap;
 }
 
 #run-buddy {
