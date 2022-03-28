@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #729be7;
+    --primary-color: #4b5c46;
     --secondary-color: #5e503f;
     --tertiary-color: #c6ac8f;
     --quaternary-color: #0A0908;
@@ -12,14 +12,27 @@
     box-sizing: border-box;
 }
 
+.button {
+    padding: 10px 15px;
+    border: 2px solid var(--quaternary-color);
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: var(--quinary-color);
+}
+
+.button:active {
+    background-color: #3a4d34;
+}
+
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: var(--quinary-color);
     color: white;
+    text-decoration-skip-ink: none;
 }
 
 header {
-    background-image: url("../images/pexels-luis-gomes-546819.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/pexels-luis-gomes-546819.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: 80%;
@@ -32,35 +45,63 @@ header nav ul {
     align-items: center;
     list-style: none;
     padding: 20px 0;
+    margin: 0;
 }
 
 header nav ul li a {
     text-decoration: none;
     color: var(--tertiary-color);
     font-size: 1.65vw;
-    padding: 10px 10px;
+    padding: 10px 15px;
     text-shadow: 3px 3px 7px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    transition: all 1s;
 }
 
 header nav ul li a:hover {
     background: white;
     color: var(--primary-color);
-    border-radius: 15px;
     text-shadow: none;
 }
 
 .hero {
     height: 800px;
-    background-image: url("../images/pexels-luis-gomes-546819.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/pexels-luis-gomes-546819.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: 80%;
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
+    position: relative;
 }
 
-.hero h1 {
+.hero .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero .hero-content div {
+    text-align: center;
+    font-size: 36px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
+}
+
+.hero .hero-content div a {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.hero .hero-content div a:hover {
+    color: var(--quinary-color)
+}
+
+.hero #name-hero {
+    position: absolute;
+    bottom: 30px;
+    right: 0vw;
+}
+
+.hero #name-hero h1 {
     padding: 10px 75px;
     border: 2px solid var(--secondary-color);
     margin-bottom: 50px;
@@ -85,22 +126,37 @@ header nav ul li a:hover {
 }
 
 .about-me div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 80%;
-    margin: 0 auto;
+    margin: 0 5%;
 }
 
 .about-me article {
     text-align: center;
-    width: 100%;
     margin-bottom: 50px;
     font-size: 20px;
     line-height: 1.4;
     padding: 40px;
     border-radius: 15px;
     background-color: var(--primary-color);
+}
+
+.tech {
+    text-align: center;
+}
+
+.tech button {
+    font-size: 24px;
+}
+
+.tech #tech-collapsable {
+    margin: 20px;
+    color: var(--quaternary-color)
+}
+
+.tech #tech-collapsable ul {
+    list-style-position: inside;
+    text-align: left;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .showcase {
@@ -128,6 +184,26 @@ header nav ul li a:hover {
 .showcase > a:hover {
     /* flex-grow: 10; */
     height: 500px;
+}
+
+.showcase a div {
+    padding: 10px 30px;
+    border: 3px solid var(--secondary-color);
+    border-left: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: var(--tertiary-color);
+    width: fit-content;
+    align-self: flex-end;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, .5);
+}
+
+.showcase a div h3 {
+    font-size: 24px;
+}
+
+.showcase a div > h3, .showcase div > p {
+    margin: 0;
 }
 
 #run-buddy {
@@ -168,18 +244,6 @@ header nav ul li a:hover {
     background-image: url(../images/weather-app.JPG);
 }
 
-.showcase a div {
-    padding: 10px 50px;
-    border: 3px solid var(--secondary-color);
-    border-left: 0;
-    margin-bottom: 20px;
-    font-size: 16px;
-    background-color: var(--tertiary-color);
-    width: fit-content;
-    align-self: flex-end;
-    box-shadow: 7px 7px 10px rgba(0, 0, 0, .5);
-}
-
 .contact nav {
     width: 80%;
     margin: 0 auto;
@@ -210,6 +274,7 @@ header nav ul li a:hover {
 .contact nav ul li a:hover {
     color: var(--primary-color);
     text-shadow: none;
+    text-decoration: none;
 }
 
 footer {
@@ -217,6 +282,7 @@ footer {
     justify-content: space-between;
     padding: 20px 30px;
     background-color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
 }
 
 @media screen and (max-width: 980px) {
@@ -225,12 +291,12 @@ footer {
     }
 
     .hero {
-        height: 250px;
+        height: 400px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .hero h1 {
+    .hero #name-hero h1 {
         font-size: 28px;
         text-align: end;
         padding: 10px 20px;
@@ -250,10 +316,6 @@ footer {
         margin-bottom: 20px;
         width: 34%;
         text-align: center;
-    }
-
-    .hero {
-        height: 150px;
     }
 
     .contact nav ul {
