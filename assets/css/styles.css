@@ -186,7 +186,7 @@ header nav ul li a:hover {
 }
 
 .showcase .showcase-el .showcase-body {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -199,12 +199,11 @@ header nav ul li a:hover {
 }
 
 .showcase .showcase-el .showcase-body p {
-    width: 50%;
     margin: 20px auto;
     color: var(--quinary-color);
     background-color: var(--primary-color);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: solid 2px var(--quaternary-color);
 }
 
