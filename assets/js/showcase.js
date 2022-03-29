@@ -1,5 +1,5 @@
 var showcaseEl = document.querySelector(".showcase");
-var showcaseElList = document.querySelectorAll(".showcase a");
+var showcaseElList = document.querySelectorAll(".showcase .showcase-el");
 var showcaseWidth;
 
 var updateWidth = function () {
@@ -22,9 +22,8 @@ var updateWidth = function () {
 }
 
 var adjustShowcaseWidth = function (event) {
-    updateWidth();
     var targetEl = event.target;
-    if (targetEl.tagName == "A" && showcaseWidth >= 900) {
+    if (targetEl.className == "showcase-el" && showcaseWidth >= 900) {
         var row = targetEl.getAttribute("data-row");
         var totalWidthUsed = 0;
         showcaseElList.forEach(function (element) {
@@ -38,26 +37,10 @@ var adjustShowcaseWidth = function (event) {
     }
 }
 
-// var adjustShowcaseWidth = function (event) {
-//     updateWidth();
-//     var targetEl = event.target;
-//     var targetParentEl = targetEl.parentElement;
-//     if ((targetEl.className == "showcase-body" || targetEl.className == "showcase-title") && showcaseWidth >= 900) {
-//         var row = targetParentEl.getAttribute("data-row");
-//         var totalWidthUsed = 0;
-//         showcaseElList.forEach(function (element) {
-//             if (element.getAttribute("data-row") == row) {
-//                 element.style.width = (element.firstElementChild.offsetWidth) + 20 + "px";
-//                 totalWidthUsed += element.firstElementChild.offsetWidth + 40;
-//             }
-//         });
-//         var remainingWidth = (showcaseWidth - totalWidthUsed) + targetParentEl.firstElementChild.offsetWidth;
-//         targetParentEl.style.width = remainingWidth + "px";
-//     }
-// }
-
 updateWidth();
 
 window.onresize = updateWidth;
-showcaseEl.addEventListener("mouseover", adjustShowcaseWidth);
-showcaseEl.addEventListener("mouseexit", updateWidth);
+for(var i = 0; i < showcaseEl.childElementCount; i++) {
+    showcaseElList[i].addEventListener("mouseenter", adjustShowcaseWidth);
+    showcaseElList[i].addEventListener("mouseleave", updateWidth);
+};

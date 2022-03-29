@@ -168,7 +168,7 @@ header nav ul li a:hover {
     margin-bottom: 50px;
 }
 
-.showcase > a {
+.showcase .showcase-el {
     text-align: center;
     border: 3px solid var(--primary-color);
     height: 250px;
@@ -181,12 +181,12 @@ header nav ul li a:hover {
     background-position: center;
 }
 
-.showcase > a:hover {
+.showcase .showcase-el:hover {
     height: 500px;
 }
 
-.showcase a .showcase-body {
-    display: none;
+.showcase .showcase-el .showcase-body {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -194,12 +194,30 @@ header nav ul li a:hover {
     opacity: 0;
 }
 
-.showcase a .showcase-body:hover {
-    display: flex;
+.showcase .showcase-el .showcase-body:hover {
     opacity: 1;
 }
 
-.showcase a .showcase-title {
+.showcase .showcase-el .showcase-body p {
+    width: 50%;
+    margin: 20px auto;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 2px var(--quaternary-color);
+}
+
+.showcase .showcase-el .showcase-body a {
+    text-decoration: none;
+    margin: 5px;
+}
+
+.showcase .showcase-el .showcase-body a:hover {
+    color: var(--quinary-color);
+}
+
+.showcase .showcase-el .showcase-title {
     padding: 10px 30px;
     border: 3px solid var(--secondary-color);
     border-left: 0;
@@ -212,11 +230,11 @@ header nav ul li a:hover {
     box-shadow: 7px 7px 10px rgba(0, 0, 0, .5);
 }
 
-.showcase a .showcase-title h3 {
+.showcase .showcase-el .showcase-title h3 {
     font-size: 24px;
 }
 
-.showcase a .showcase-title h3, .showcase .showcase-title p {
+.showcase .showcase-el .showcase-title h3, .showcase .showcase-title p {
     margin: 0;
     white-space: nowrap;
 }
