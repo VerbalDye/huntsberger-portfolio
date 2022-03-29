@@ -194,10 +194,6 @@ header nav ul li a:hover {
     opacity: 0;
 }
 
-.showcase .showcase-el .showcase-body:hover {
-    opacity: 1;
-}
-
 .showcase .showcase-el .showcase-body p {
     margin: 20px auto;
     color: var(--quinary-color);
@@ -321,13 +317,13 @@ footer {
     header nav ul li a {
         font-size: 24px;
     }
-
-    .hero {
-        height: 400px;
-    }
 }
 
 @media screen and (max-width: 768px) {
+    .hero {
+        height: 550px;
+    }
+
     .hero #name-hero h1 {
         font-size: 28px;
         text-align: end;
@@ -348,6 +344,10 @@ footer {
         margin-bottom: 20px;
         width: 34%;
         text-align: center;
+    }
+
+    .hero .hero-content div p {
+        font-size: 28px;
     }
 
     .contact nav ul {
