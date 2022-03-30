@@ -186,12 +186,12 @@ header nav ul li a:hover {
 }
 
 .showcase .showcase-el .showcase-body {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    transition: all 2s;
     opacity: 0;
+    visibility: hidden;
 }
 
 .showcase .showcase-el .showcase-body p {
