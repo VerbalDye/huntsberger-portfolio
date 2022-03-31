@@ -69,7 +69,6 @@ var handleMouseOver = function (event) {
     // get our variables ready
     var targetEl = event.target;
     var bodyEl = document.querySelector("#" + targetEl.id + " .showcase-body");
-    var descriptionEl = document.querySelector("#" + targetEl.id + " .showcase-body p");
 
     // set the current body element as a global variable to help with tracking in 'complete' functions
     currentBody = bodyEl;
@@ -91,7 +90,16 @@ var handleMouseOver = function (event) {
         }
     });
 
-    // does the calcualtions for the body width it should be equal to the projects width in the default positiion
+    // calls 
+    adjustShowcaseWidth(targetEl);
+}
+
+var adjustShowcaseWidth = function (targetEl) {
+
+    // get the description element of the current target
+    var descriptionEl = document.querySelector("#" + targetEl.id + " .showcase-body p");
+
+    // does the calcualtions for the description width. It should be equal to the projects width in the default positiion
     if (showcaseWidth < 900) {
         descriptionEl.style.width = "90%";
     } else if (showcaseWidth < 1250) {
@@ -100,35 +108,50 @@ var handleMouseOver = function (event) {
         descriptionEl.style.width = Math.floor(showcaseWidth / 3 - 21) + "px";
     };
 
-
-
-    adjustShowcaseWidth(targetEl);
-}
-
-var adjustShowcaseWidth = function (targetEl) {
-
+    // 
     if (targetEl.className == "showcase-el" && showcaseWidth >= 900) {
+
+        // gets the row of the current element
         var row = targetEl.getAttribute("data-row");
+
+        // sett the width the other elements take up
         var totalWidthUsed = 0;
+
+        // iterates through all the showcase elements 
         showcaseElList.forEach(function (element) {
-            if (element.getAttribute("data-row") == row) {
+
+            // gets the items in the same row as the target, but not the target
+            if (element.getAttribute("data-row") == row && targetEl.id != element.id) {
+
+                // sets the width to just above the size of the <h3> element in the showcase
                 element.style.width = (element.firstElementChild.offsetWidth) + 20 + "px";
-                totalWidthUsed += element.firstElementChild.offsetWidth + 40;
+
+                // saves that width used by one element
+                totalWidthUsed += element.firstElementChild.offsetWidth + 51;
             }
         });
-        var remainingWidth = (showcaseWidth - totalWidthUsed) + targetEl.firstElementChild.offsetWidth;
+
+        // finds the remaining width after resizing the other elements
+        var remainingWidth = showcaseWidth - totalWidthUsed;
         targetEl.style.width = remainingWidth + "px";
     }
 }
 
-updateWidth();
+// runs update width on load
+onload.updateWidth();
 
+// set the pointer events on load to make sure they are set
 showcaseElList.forEach(function (element) {
     var bodyEl = document.querySelector("#" + element.id + " .showcase-body");
     bodyEl.setAttribute("style", "pointer-events:none;");
 });
 
-window.onresize = updateWidth;
+// listens for the window to resize and call the update width function again to adjust
+onresize = updateWidth();
+
+// sets all the event listeners had to use a listener on each element to avoid bugs with bubbling conflicts
+// this can probably be solved with jQuery or significantly more complicated JS 
+// this is a performance drag, but there are few enough elements that I think it is okay
 for (var i = 0; i < showcaseEl.childElementCount; i++) {
     showcaseElList[i].addEventListener("mouseenter", handleMouseOver);
     showcaseElList[i].addEventListener("touchenter", handleMouseOver);
