@@ -127,18 +127,20 @@ var adjustShowcaseWidth = function (targetEl) {
                 element.style.width = (element.firstElementChild.offsetWidth) + 20 + "px";
 
                 // saves that width used by one element
-                totalWidthUsed += element.firstElementChild.offsetWidth + 51;
+                totalWidthUsed += element.firstElementChild.offsetWidth + 40;
             }
         });
 
         // finds the remaining width after resizing the other elements
-        var remainingWidth = showcaseWidth - totalWidthUsed;
+        var remainingWidth = showcaseWidth - totalWidthUsed - 21;
+        console.log(showcaseWidth);
+        console.log(remainingWidth);
         targetEl.style.width = remainingWidth + "px";
     }
 }
 
 // runs update width on load
-onload.updateWidth();
+onload = updateWidth;
 
 // set the pointer events on load to make sure they are set
 showcaseElList.forEach(function (element) {
@@ -147,7 +149,7 @@ showcaseElList.forEach(function (element) {
 });
 
 // listens for the window to resize and call the update width function again to adjust
-onresize = updateWidth();
+onresize = updateWidth;
 
 // sets all the event listeners had to use a listener on each element to avoid bugs with bubbling conflicts
 // this can probably be solved with jQuery or significantly more complicated JS 
