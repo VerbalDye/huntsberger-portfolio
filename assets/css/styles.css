@@ -272,6 +272,10 @@ header nav ul li a:hover {
     background-image: url(../images/weather-app.JPG);
 }
 
+#cocktail-music {
+    background-image: url(../images/cocktail-music.JPG);
+}
+
 .contact nav {
     width: 80%;
     margin: 0 auto;
