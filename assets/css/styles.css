@@ -234,6 +234,10 @@ header nav ul li a:hover {
     white-space: nowrap;
 }
 
+#go-together {
+    background-image: url(../images/go-together.JPG);
+}
+
 #run-buddy {
     background-image: url(../images/run-buddy.JPG);
 
